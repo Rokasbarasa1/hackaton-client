@@ -16,7 +16,7 @@
 
         props: {
             co2: {
-                type: Number,
+                type: String,
                 required: true
             },
             distance: {

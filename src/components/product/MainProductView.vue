@@ -1,9 +1,10 @@
 <template>
     <div>
         <sub-company-logo/>
-        <product-title title="BBq chicken wings Rose CHANGE" class="title"/>
-        <product-data co2=77 distance=44 energy-cost=2000 manufacturer="Klaipedos maistas" water-cost="2344"/>
-        <expandable-section description="Change description in main product viwe" type="Change type in main prodcut viwe"/>
+        <product-title v-bind:title='json.data.title' class="title"/>
+        <product-data v-bind:co2='json.data.co2' v-bind:distance='json.data.distance' v-bind:energy-cost=2000 v-bind:manufacturer='json.data.manufacturer' v-bind:water-cost='json.data.water'/>
+        <expandable-section v-bind:description='json.data.description' v-bind:type='json.data.title'/>
+        <p> The json response is here: {{json}}</p>
     </div>
 </template>
 
@@ -24,8 +25,8 @@
 
         mounted () {
             axios
-                .get('http://10.152.218.0:8000/' + this.$route.params.productId)
-                .then(response => (this.json = response.body))
+                .get('http://127.0.0.1:5000/products' )
+                .then(response => ( this.json = response))
         },
     }
 </script>

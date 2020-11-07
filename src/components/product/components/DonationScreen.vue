@@ -13,7 +13,7 @@
 
         props: {
             currentAmount: {
-                type: Number,
+                type: String,
                 required: true
             },
             currency: {
