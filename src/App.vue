@@ -22,13 +22,11 @@
       </v-list-item>
 
       <v-divider></v-divider>
-
       <v-list dense>
         <v-list-item
             v-for="item in items"
             :key="item.title"
-            link
-        >
+            link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -39,13 +37,22 @@
             </router-link>
           </v-list-item-content>
         </v-list-item>
+
+
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-augmented-reality</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+              <v-list-item-title style="color: black" @click="arLink()">AR</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-main>
       <v-container fluid>
-
-        <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -62,10 +69,15 @@ export default {
       {title: 'Home', icon: 'mdi-home-city', path: "/home"},
       {title: 'About', icon: 'mdi-account', path: "/about"},
       {title: 'Product', icon: 'mdi-account-group-outline', path: "/product/1"},
-      {title: 'AR', icon: 'mdi-augmented-reality', path: "/ar"},
     ],
     mini: true,
-  })
+  }),
+  methods: {
+    arLink() {
+      console.log("works")
+      window.location = 'https://prebiusta.github.io/test/'
+    }
+  }
 };
 </script>
 
