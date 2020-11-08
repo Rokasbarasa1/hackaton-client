@@ -52,7 +52,7 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container class="pa-0">
+      <v-container style="height: 100%" class="pa-0">
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -68,7 +68,7 @@ export default {
     items: [
       {title: 'Home', icon: 'mdi-home-city', path: "/home"},
       {title: 'About', icon: 'mdi-account', path: "/about"},
-      {title: 'Product', icon: 'mdi-account-group-outline', path: "/product/1"},
+      {title: 'Product', icon: 'mdi-room-service', path: "/product/1"},
       {title: 'Donate', icon: 'mdi-bitcoin', path: "/donate"},
     ],
     mini: true,
