@@ -63,6 +63,7 @@ export default {
       {title: 'About', icon: 'mdi-account', path: "/about"},
       {title: 'Product', icon: 'mdi-account-group-outline', path: "/product/1"},
       {title: 'AR', icon: 'mdi-augmented-reality', path: "/ar"},
+      {title: 'Donate', icon: 'mdi-augmented-reality', path: "/donate"},
     ],
     mini: true,
   })

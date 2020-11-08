@@ -2,9 +2,9 @@
     <v-row justify="center">
         <v-expansion-panels popout>
             <donations-section/>
-            <description-section v-bind:content="description" v-bind:title="type"/>
-            <recipes-section v-bind:type="type"/>
-            <references-section v-bind:type="type"/>
+            <description-section v-bind:title="type" />
+            <recipes-section v-bind:title="type"/>
+            <references-section v-bind:title="type"/>
             <help-us-section/>
         </v-expansion-panels>
     </v-row>
@@ -21,10 +21,6 @@
         components: {HelpUsSection, ReferencesSection, RecipesSection, DescriptionSection, DonationsSection},
 
         props: {
-            description: {
-                type: String,
-                required: true
-            },
             type: {
                 type: String,
                 required: true

@@ -1,10 +1,9 @@
 <template>
     <div>
         <sub-company-logo/>
-        <product-title v-bind:title='json.data.title' class="title"/>
-        <product-data v-bind:co2='json.data.co2' v-bind:distance='json.data.distance' v-bind:energy-cost=2000 v-bind:manufacturer='json.data.manufacturer' v-bind:water-cost='json.data.water'/>
-        <expandable-section v-bind:description='json.data.description' v-bind:type='json.data.title'/>
-        <p> The json response is here: {{json}}</p>
+        <product-title :title="json.name" class="title"/>
+        <product-data :co2='json.carbonDioxidePrint' :location='json.location' :water-cost='json.waterPrint'/>
+        <expandable-section :type='json.name'/>
     </div>
 </template>
 
@@ -12,21 +11,22 @@
     import ProductTitle from "@/components/product/components/ProductTitle";
     import ProductData from "@/components/product/components/ProductData";
     import ExpandableSection from "@/components/product/components/ExpandableSections";
-    import axios from "axios";
     import SubCompanyLogo from "@/components/product/components/SubCompanyLogo";
+    import axios from "axios"
+
     export default {
         name: "MainProductView",
 
         components: {SubCompanyLogo, ExpandableSection, ProductData, ProductTitle},
-
         data: () => ({
-            json: null,
+            json: {},
         }),
-
         mounted () {
-            axios
-                .get('http://127.0.0.1:5000/products' )
-                .then(response => ( this.json = response))
+            axios.get('https://hackathon-db-api.azurewebsites.net/product/get/' + this.$route.params.productId)
+                .then(response => {
+                    this.json = response.data
+                    console.log(response.data)
+                })
         },
     }
 </script>

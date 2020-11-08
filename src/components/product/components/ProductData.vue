@@ -2,10 +2,8 @@
     <div class="ProductDetails">
         <ul style="list-style-type:none;">
             <li class="text">CO2 cost: {{co2}}Kg</li>
-            <li class="text">Distance traveled: {{distance}}Km</li>
             <li class="text">Water cost: {{waterCost}}m³</li>
-            <li class="text">Energy cost: {{energyCost}}J</li>
-            <li class="text">Manufacturer: {{manufacturer}}</li>
+            <li class="text">Location: {{location}}</li>
         </ul>
     </div>
 </template>
@@ -19,19 +17,11 @@
                 type: String,
                 required: true
             },
-            distance: {
-                type: String,
-                required: true
-            },
             waterCost: {
                 type: String,
                 required: true
             },
-            energyCost: {
-                type: String,
-                required: true
-            },
-            manufacturer: {
+            location: {
                 type: String,
                 required: true
             }

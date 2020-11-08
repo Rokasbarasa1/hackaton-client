@@ -9,16 +9,52 @@
 
                 <ol>
                     <li>
-                        kasfdasdg
+                        Do you like this product?
+                        <v-radio-group
+                                v-model="row"
+                                row
+                        >
+                            <v-radio
+                                    label="Yes"
+                                    value="Yes"
+                            ></v-radio>
+                            <v-radio
+                                    label="No"
+                                    value="No"
+                            ></v-radio>
+                        </v-radio-group>
                     </li>
                     <li>
-                        dsdfhsdfharrgg
+                        Do you preffer saving money or being eco friendly?
+                        <v-radio-group
+                                v-model="row"
+                                row
+                        >
+                            <v-radio
+                                    label="Yes"
+                                    value="Yes"
+                            ></v-radio>
+                            <v-radio
+                                    label="No"
+                                    value="No"
+                            ></v-radio>
+                        </v-radio-group>
                     </li>
                     <li>
-                        fgdafgaegaeh eef   r  etrg rWEEFw
-                    </li>
-                    <li>
-                        sogasefogkp3rrjgaperjg
+                        Would you recomend our products?
+                        <v-radio-group
+                                v-model="row"
+                                row
+                        >
+                            <v-radio
+                                    label="Yes"
+                                    value="Yes"
+                            ></v-radio>
+                            <v-radio
+                                    label="No"
+                                    value="No"
+                            ></v-radio>
+                        </v-radio-group>
                     </li>
                 </ol>
             </div>
